@@ -1,0 +1,61 @@
+import pandas as pd
+import numpy as np
+import statistics
+
+data = pd.read_csv('Raisin_DatasetComas.csv', encoding='utf-8',sep=';');
+
+columnasArea=data['Area'].tolist()
+columnasMayor=data['MajorAxisLength'].tolist()
+columnasMenor=data['MinorAxisLength'].tolist()
+columnasE=data['Eccentricity'].tolist()
+columnasConvex=data['ConvexArea'].tolist()
+columnasExtent=data['Extent'].tolist()
+columnasP=data['Perimeter'].tolist()
+columnasClass=data['Class'].tolist()
+
+print("---------------------------Mediana---------------------------")
+print(np.median(columnasArea))
+print(np.median(columnasMayor))
+print(np.median(columnasMenor))
+print(np.median(columnasE))
+print(np.median(columnasConvex))
+print(np.median(columnasExtent))
+print(np.median(columnasP))
+#print(np.median(columnasClass))
+print("---------------------------Media---------------------------")
+print(np.mean(columnasArea))
+print(np.mean(columnasMayor))
+print(np.mean(columnasMenor))
+print(np.mean(columnasE))
+print(np.mean(columnasConvex))
+print(np.mean(columnasExtent))
+print(np.mean(columnasP))
+
+print("---------------------------Moda---------------------------")
+# df = pd.DataFrame(columnasArea)
+# print(df.mode())
+# df = pd.DataFrame(columnasMayor)
+# print(df.mode())
+# df = pd.DataFrame(columnasMenor)
+# print(df.mode())
+# df = pd.DataFrame(columnasE)
+# print(df.mode())
+# df = pd.DataFrame(columnasConvex)
+# print(df.mode())
+# df = pd.DataFrame(columnasExtent)
+# print(df.mode())
+# df = pd.DataFrame(columnasP)
+# print(df.mode())
+
+df = pd.DataFrame(columnasClass)
+print(df.mode())
+
+print("---------------------------Media gemetrica---------------------------")
+print(statistics.geometric_mean(columnasArea))
+print(statistics.geometric_mean(columnasMayor))
+print(statistics.geometric_mean(columnasMenor))
+print(statistics.geometric_mean(columnasE))
+print(statistics.geometric_mean(columnasConvex))
+print(statistics.geometric_mean(columnasExtent))
+print(statistics.geometric_mean(columnasP))
+
